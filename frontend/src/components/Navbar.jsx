@@ -2,9 +2,11 @@ import React from "react";
 
 const Navbar = () => {
   return (
+    
     <header>
-      <p>ELITE EDGE FITNESS</p>
+      <p>DEV_FITTS</p>
     </header>
+    
   );
 };
 

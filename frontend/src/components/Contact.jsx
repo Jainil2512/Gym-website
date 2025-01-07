@@ -7,27 +7,35 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [contact, setContact] = useState("");
   const [loading, setLoading] = useState(false);
+
+
 
   const sendMail = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
+      const formData = {
+        name,
+        email,
+        message,
+        contact,
+      };
+      console.log('Form data:', formData); 
+  
       const { data } = await axios.post(
-        "http://localhost:4000/send/mail",
-        {
-          name,
-          email,
-          message,
-        },
+        'http://localhost:4000/send/mail',
+        formData,
         {
           withCredentials: true,
-          headers: { "Content-Type": "application/json" },
+          headers: { 'Content-Type': 'application/json' },
         }
       );
-      setName("");
-      setEmail("");
-      setMessage("");
+      setName('');
+      setEmail('');
+      setMessage('');
+      setContact('');
       toast.success(data.message);
       setLoading(false);
     } catch (error) {
@@ -35,6 +43,7 @@ const Contact = () => {
       toast.error(error.response.data.message);
     }
   };
+  
 
   return (
     <section className="contact">
@@ -56,6 +65,17 @@ const Contact = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+
+        <div>
+          <label>contact </label>
+          <input
+            type="number"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+          />
+        </div>
+
+
         <div>
           <label>Message</label>
           <input

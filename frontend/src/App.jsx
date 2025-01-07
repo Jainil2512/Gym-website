@@ -5,11 +5,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import WorkoutSessions from "./components/WorkoutSessions";
+//import WorkoutSessions from "./components/WorkoutSessions";
 import Gallery from "./components/Gallery";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
-import BMICalculator from "./components/BMICalculator";
+//import BMICalculator from "./components/BMICalculator";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -17,11 +17,11 @@ const App = () => {
     <Router>
       <Navbar />
       <Hero />
-      <WorkoutSessions />
+      {/*<WorkoutSessions />*/}
       <Gallery />
       <Pricing />
       <Contact />
-      <BMICalculator />
+      {/*<BMICalculator />*/}
       <Footer />
       <ToastContainer theme="dark" position="top-center" />
     </Router>

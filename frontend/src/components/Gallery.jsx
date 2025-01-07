@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallery = () => {
   const gallery = [
-    "/img1.webp",
+    "/hero_img2.jpg",
     "/img2.jpg",
     "/img3.jpg",
     "/img4.jpg",
@@ -10,6 +10,7 @@ const Gallery = () => {
     "/img8.jpg",
     "/img5.jpg",
     "/img6.jpg",
+    "/img1.jpg",
   ];
   return (
     <section className="gallery">

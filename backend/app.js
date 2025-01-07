@@ -18,10 +18,49 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(router);
 
-router.post("/send/mail", async (req, res, next) => {
-  const { name, email, message } = req.body;
-  if (!name || !email || !message) {
+app.post('/send/mail', async (req, res, next) => {
+  const { name, email, message, contact } = req.body;
+
+  if (!name || !email || !contact || !message) {
+    return res.status(400).json({
+      success: false,
+      message: 'Please provide all details',
+    });
+  }
+
+  const options = {
+    email: 'devfitts2003@gmail.com',
+    subject: 'GYM WEBSITE CONTACT',
+    message,
+    userEmail: email,
+    contact,
+  };
+
+  console.log('Options:', options); // Log the options object
+
+  try {
+    await sendEmail(options);
+
+    res.status(200).json({
+      success: true,
+      message: 'Message Sent Successfully.',
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal Server Error',
+    });
+  }
+});
+
+
+/*router.post("/send/mail", async (req, res, next) => {
+  const { name, email, message, contact } = req.body;
+  console.log('Request body:', req.body);
+  if (!name || !email || !contact || !message) {
     return next(
       res.status(400).json({
         success: false,
@@ -31,10 +70,11 @@ router.post("/send/mail", async (req, res, next) => {
   }
   try {
     await sendEmail({
-      email: "merndeveloper4@gmail.com",
+      email: "devfitts2003@gmail.com",
       subject: "GYM WEBSITE CONTACT",
       message,
       userEmail: email,
+      contact,
     });
     res.status(200).json({
       success: true,
@@ -46,9 +86,8 @@ router.post("/send/mail", async (req, res, next) => {
       message: " Internal Server Error",
     });
   }
-});
+});*/
 
-app.use(router);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server listening at port ${process.env.PORT}`);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+{/* import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const BMICalculator = () => {
@@ -84,4 +84,4 @@ const BMICalculator = () => {
   );
 };
 
-export default BMICalculator;
+export default BMICalculator;*/}
