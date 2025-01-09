@@ -1,6 +1,7 @@
- import { Check } from "lucide-react";
+ //import { Check } from "lucide-react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+
 
 const Pricing = () => {
   const pricing = [
@@ -9,26 +10,33 @@ const Pricing = () => {
       title: "HEALTHY DIET PLAN",
       price: 2599,
       length: 12,
+      redirect_url: "/HealthyDietPlan",
     },
     {
       //imgUrl: "/pricing.jpg",
       title: "WEIGHT LOSS ",
       price: 1599,
       length: 12,
+      redirect_url: "/WeightLoss",
     },
     {
       //imgUrl: "/pricing.jpg",
       title: "PEARSONAL TRAINING ",
       price: 9499,
       length: 12,
+      redirect_url: "/PersonalTraining",
     },
     {
       title:"MUSCLE GAIN",
       price:1599,
       length:12,
+      redirect_url: "/MuscleGain",
     }
   ];
+
+  //const handleLinkClick = (url) => { window.open(url, "_blank", "noopener,noreferrer"); };
   return (
+
     <section className="pricing">
       <h1>OUR FITNESS PLANS</h1>
       <div className="wrapper">
@@ -41,22 +49,8 @@ const Pricing = () => {
                 <p>For {element.length} WEEKS</p>
               </div>
                <div className="description">
-                <p>
-                  <Check /> Equipment
-                </p>
-                <p>
-                  <Check /> All Day Fre Training
-                </p>
-                <p>
-                  <Check /> Free Restroom
-                </p>
-                <p>
-                  <Check /> 24/7 Skilled Support
-                </p>
-                <p>
-                  <Check /> 20 Days Freezing Option
-                </p>
-                <Link to={"/"}>View details</Link>
+                <Link to={element.redirect_url}>View details</Link>
+                {/*<button onClick={() => handleLinkClick(element.redirect_url)}> View details </button>*/}
               </div>
             </div>
           );
@@ -68,50 +62,6 @@ const Pricing = () => {
 
 export default Pricing;
 
-{/*import React from 'react'
-import { Link } from "react-router-dom";
 
-const Pricing = () => {
-  return (
-    <div className='wrapper'>
-      <h1>OUR FITNESS PLANS</h1>
-      <div className='box'>
-        <div className="title">
-        <h2>HEALTHY DIET PLAN</h2>
-        <h3>2599</h3>
-        <p>12 weeks</p>
-        </div> 
-        <Link to={"/"}>View details</Link>
-      </div>
-      <div className='box'>
-      <div className="title">
-        <h2>HEALTHY DIET PLAN</h2>
-        <h3>2599</h3>
-        <p>12 weeks</p>
-        </div> 
-        <Link to={"/"}>View details</Link>
-      </div>
-      <div className='box'>
-      <div className="title">
-        <h2>HEALTHY DIET PLAN</h2>
-        <h3>2599</h3>
-        <p>12 weeks</p>
-        </div> 
-        <Link to={"/"}>View details</Link>
-      </div>
-      <div className='box'>
-      <div className="title">
-        <h2>HEALTHY DIET PLAN</h2>
-        <h3>2599</h3>
-        <p>12 weeks</p>
-        </div> 
-        <Link to={"/"}>View details</Link>
-      </div>
-      
-    </div>
-  )
-}
 
-export default Pricing*/
-}
 
