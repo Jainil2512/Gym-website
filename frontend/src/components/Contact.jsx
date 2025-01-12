@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { ClipLoader } from "react-spinners";
 import { toast } from "react-toastify";
+import dotenv from "dotenv";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,8 @@ const Contact = () => {
   const [contact, setContact] = useState("");
   const [loading, setLoading] = useState(false);
 
+//dot env config
+dotenv.config()
 
 
   const sendMail = async (e) => {
@@ -25,7 +28,7 @@ const Contact = () => {
       console.log('Form data:', formData); 
   
       const { data } = await axios.post(
-        'http://localhost:4000/send/mail',
+        `${process.env.backend_url}/send/mail` ,
         formData,
         {
           withCredentials: true,
