@@ -10,7 +10,7 @@ const Contact = () => {
   const [contact, setContact] = useState("");
   const [loading, setLoading] = useState(false);
 
-
+  const backendUrl = import.meta.env.backend_url;
 
 
   const sendMail = async (e) => {
@@ -26,7 +26,7 @@ const Contact = () => {
       console.log('Form data:', formData); 
   
       const { data } = await axios.post(
-        `${meta.env.backend_url}/send/mail` ,
+        `${backendUrl}/send/mail` ,
         formData,
         {
           withCredentials: true,
