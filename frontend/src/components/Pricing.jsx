@@ -8,7 +8,7 @@ const Pricing = () => {
     {
       
       title: "HEALTHY DIET PLAN",
-      price: 2599,
+      price: 1599,
       length: 12,
       redirect_url: "/HealthyDietPlan",
     },

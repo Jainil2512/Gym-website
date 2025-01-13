@@ -21,6 +21,13 @@
     color: whitesmoke;
     margin-bottom: 20px;
   }
+  .text-bottom{
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.6;
+    color: lightseagreen;
+    margin-bottom: 20px;
+  }
   
   button {
     padding: 10px 20px;

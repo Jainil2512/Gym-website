@@ -28,6 +28,8 @@ const PersonalTraining = () => {
       </p>
       <span></span>
       <p className="text">Join now and transform your body in just 24 weeks!</p>
+      <span></span>
+      <p className="text-bottom">Also get a free online consultation with me!</p>
       <button onClick={HandleClick}>back</button>
     </div>
   );

@@ -19,6 +19,15 @@ const WeightLoss = () => {
         a stronger, learner and healthier version of yourself - Your dream
         physique.{" "}
       </p>
+      <div className="list">
+        <p className="list-heading">What does this program include ? </p>
+          <ol>
+           <li>1. A customized diet schedule</li>
+            <li>2. Personalized Workout schedule</li>
+            <li>3. Supplementation guide</li>
+            <li>4. Exercise form and technique guide </li>
+          </ol>
+      </div>
       <button onClick={HandleClick}>back</button>
     </div>
   );
