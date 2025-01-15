@@ -8,14 +8,14 @@ const Pricing = () => {
     {
       
       title: "HEALTHY DIET PLAN",
-      price: 1599,
+      price: 1499,
       length: 12,
       redirect_url: "/HealthyDietPlan",
     },
     {
       //imgUrl: "/pricing.jpg",
       title: "WEIGHT LOSS ",
-      price: 1599,
+      price: 1499,
       length: 12,
       redirect_url: "/WeightLoss",
     },
@@ -28,7 +28,7 @@ const Pricing = () => {
     },
     {
       title:"MUSCLE GAIN",
-      price:1599,
+      price:1499,
       length:12,
       redirect_url: "/MuscleGain",
     }
