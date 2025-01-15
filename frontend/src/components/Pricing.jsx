@@ -21,7 +21,7 @@ const Pricing = () => {
     },
     {
       //imgUrl: "/pricing.jpg",
-      title: "PEARSONAL TRAINING ",
+      title: "PERSONAL TRAINING ",
       price: 9499,
       length: 24,
       redirect_url: "/PersonalTraining",
